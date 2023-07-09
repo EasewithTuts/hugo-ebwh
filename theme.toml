@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "ewbh"
+license = "MIT"
+licenselink = "https://github.com/EasewithTuts/hugo-ebwh/blob/master/LICENSE"
+description = "A minimal HUGO theme"
+homepage = "http://hugo-ebwh.netlify.app/"
+tags = ["Easy" , "ewbh" , "Blog"]
+features = ["SEO-friendly","Responsive"]
+min_version = "0.112.7"
+
+[author]
+  name = "EasewithTuts"
+  homepage = "https://github.com/EasewithTuts"

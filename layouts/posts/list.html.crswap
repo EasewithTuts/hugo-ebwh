@@ -1,0 +1,8 @@
+{{ define "main" }}
+    {{range .Pages }}
+      <h1>{{ .Title }}</h1>
+      <span>{{ .Date.Format "January 2,200" }}</span>
+      <br>
+      <a href="{{ .Permalink }}">Read More</a>
+    {{ end }}
+{{ end }}

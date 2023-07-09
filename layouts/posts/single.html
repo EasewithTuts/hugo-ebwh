@@ -1,0 +1,20 @@
+{{define "main" }}
+    <main>
+        <h1>{{ .Title }}</h1>
+        <span>Posted on {{ .Date.Format "January 2, 2006"}} by {{ .Site.Params.author }}</span>
+        {{ .Content }}
+    </main>
+
+    <style>
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        main {
+            width: min(65ch , 100% - 4rem);
+            margin-inline: auto;
+        }
+    </style>
+{{ end }}
