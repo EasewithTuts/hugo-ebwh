@@ -1,20 +1,27 @@
-{{define "main" }}
+{{ define "main" }}
+{{ $words := .Content | countwords }}
+{{ $speed := 200 }}
+{{ $time :=  div $words $speed }}
+
     <main>
-        <h1>{{ .Title }}</h1>
-        <span>Posted on {{ .Date.Format "January 2, 2006"}} by {{ .Site.Params.author }}</span>
+        <h1 id="main">{{ .Title }}</h1>
+        <span>Posted on {{ .Date.Format "January 2, 2006"}} · {{$time}} min read</span>
         {{ .Content }}
     </main>
 
     <style>
-        html {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.125rem;
-            line-height: 1.6;
-        }
-
-        main {
-            width: min(65ch , 100% - 4rem);
-            margin-inline: auto;
+         pre {
+            padding: 0.5rem;
+            border-radius: .5rem;
         }
     </style>
+
+    <script>
+        const code_blocks = document.querySelectorAll('pre')
+        code_blocks.forEach((block) => {
+            block.addEventListener('click' , () => {
+                navigator.clipboard.writeText(block.textContent)
+            })
+        })
+    </script>
 {{ end }}

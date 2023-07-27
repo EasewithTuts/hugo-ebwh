@@ -1,7 +1,9 @@
 <nav class="nav">
-    <h1>{{ .Site.Title }}</h1>
-    <a href="/about">About</a>
-    <a href="/posts">Blog</a>
+    <h1><a href="/">{{ .Site.Title }}</a></h1>
+    {{ range .Site.Params.Links }}
+        <a href="/{{ lower . }}">{{ . }}</a>
+    {{ end }}
+
 </nav>
 
 <style>
@@ -16,8 +18,13 @@
         margin-right: auto;
     }
 
-    .nav > a {
-        color: black;
+    h1 > a{
         text-decoration: none;
     }
+    .nav > a {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
 </style>
+
